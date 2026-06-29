@@ -46,16 +46,100 @@
         .title-accent { color: var(--gold); }
         .site-subtitle { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
 
-        .main-nav ul { display: flex; gap: 30px; align-items: center; }
-        .main-nav a { font-weight: 500; color: var(--text); position: relative; }
+        /* Navigation with Mobile Menu */
+        .main-nav { display: flex; align-items: center; }
+        .main-nav ul { display: flex; gap: 24px; align-items: center; }
+        .main-nav a { font-weight: 500; color: var(--text); position: relative; padding: 8px 0; }
         .main-nav a:hover { color: var(--primary); }
-        .main-nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
-        .main-nav a:hover::after { width: 100%; }
+
+        /* Sub-menu (Dropdown) */
+        .menu-item-has-children { position: relative; }
+        .menu-item-has-children > a::after { content: ' ▾'; font-size: 10px; }
+        .sub-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+            min-width: 220px;
+            padding: 10px 0;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 100;
+        }
+        .menu-item-has-children:hover .sub-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+        .sub-menu li { display: block; }
+        .sub-menu a { display: block; padding: 10px 20px; font-size: 14px; color: var(--text); border-radius: 0; }
+        .sub-menu a:hover { background: var(--gray-100); color: var(--primary); }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 8px; }
+        .menu-toggle-bar { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s; }
+        .menu-toggle.active .menu-toggle-bar:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .menu-toggle.active .menu-toggle-bar:nth-child(2) { opacity: 0; }
+        .menu-toggle.active .menu-toggle-bar:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+        .nav-menu-wrapper { display: flex; align-items: center; }
+
         .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; border: 2px solid transparent; }
         .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
         .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); }
         .btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
         .btn-outline:hover { background: var(--primary); color: var(--white); }
+
+        /* Mobile Styles */
+        @media (max-width: 1024px) {
+            .menu-toggle { display: flex; }
+            .nav-menu-wrapper {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 300px;
+                height: 100vh;
+                background: var(--white);
+                box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 80px 24px 24px;
+                transition: right 0.3s ease;
+                z-index: 999;
+                overflow-y: auto;
+            }
+            .nav-menu-wrapper.open { right: 0; }
+            .nav-menu-wrapper.open::before {
+                content: '×';
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 28px;
+                cursor: pointer;
+                color: var(--text);
+            }
+            .main-nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                width: 100%;
+            }
+            .main-nav li { width: 100%; border-bottom: 1px solid var(--gray-200); }
+            .main-nav a { display: block; padding: 14px 0; width: 100%; }
+            .sub-menu {
+                position: static;
+                box-shadow: none;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                padding-left: 16px;
+                display: none;
+                background: var(--gray-100);
+                margin-bottom: 8px;
+            }
+            .menu-item-has-children.open .sub-menu { display: block; }
+            .menu-item-has-children > a::after { float: right; }
+            .header-top { display: none; }
+        }
 
         /* Hero Section */
         .hero-section { position: relative; height: 600px; overflow: hidden; }
@@ -171,15 +255,53 @@
                         <span class="site-title">Al Nuur <span class="title-accent">Complex</span></span>
                         <span class="site-subtitle">Furnitures & Pest Control</span>
                     </a>
-                    <nav class="main-nav">
+                    <button class="menu-toggle" aria-label="Menu">
+                        <span class="menu-toggle-bar"></span>
+                        <span class="menu-toggle-bar"></span>
+                        <span class="menu-toggle-bar"></span>
+                    </button>
+                    <div class="nav-menu-wrapper">
                         <ul>
                             <li><a href="index.html">Home</a></li>
-                            <li><a href="furniture.html">Furniture</a></li>
-                            <li><a href="appliances.html">Appliances</a></li>
-                            <li><a href="pest-control.html">Pest Control</a></li>
+                            <li class="menu-item-has-children">
+                                <a href="furniture.html">Furniture ▾</a>
+                                <ul class="sub-menu">
+                                    <li><a href="furniture.html?cat=sofas">Sofas</a></li>
+                                    <li><a href="furniture.html?cat=beds">Beds</a></li>
+                                    <li><a href="furniture.html?cat=mattresses">Mattresses</a></li>
+                                    <li><a href="furniture.html?cat=dining">Dining Sets</a></li>
+                                    <li><a href="furniture.html?cat=wardrobes">Wardrobes</a></li>
+                                    <li><a href="furniture.html?cat=office">Office Furniture</a></li>
+                                    <li><a href="furniture.html?cat=outdoor">Outdoor Furniture</a></li>
+                                    <li><a href="furniture.html?cat=decor">Home Decor</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="appliances.html">Appliances ▾</a>
+                                <ul class="sub-menu">
+                                    <li><a href="appliances.html?cat=refrigerators">Refrigerators</a></li>
+                                    <li><a href="appliances.html?cat=washing">Washing Machines</a></li>
+                                    <li><a href="appliances.html?cat=cookers">Cookers & Ovens</a></li>
+                                    <li><a href="appliances.html?cat=microwaves">Microwaves</a></li>
+                                    <li><a href="appliances.html?cat=dispensers">Water Dispensers</a></li>
+                                    <li><a href="appliances.html?cat=televisions">Televisions</a></li>
+                                    <li><a href="appliances.html?cat=airconditioners">Air Conditioners</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-item-has-children">
+                                <a href="pest-control.html">Pest Control ▾</a>
+                                <ul class="sub-menu">
+                                    <li><a href="pest-control.html#cockroach">Cockroach Control</a></li>
+                                    <li><a href="pest-control.html#bedbug">Bed Bug Treatment</a></li>
+                                    <li><a href="pest-control.html#termite">Termite Control</a></li>
+                                    <li><a href="pest-control.html#mosquito">Mosquito Control</a></li>
+                                    <li><a href="pest-control.html#rodent">Rodent Control</a></li>
+                                </ul>
+                            </li>
                             <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                            <li><a href="contact.html">Contact</a></li>
                         </ul>
-                    </nav>
+                    </div>
                 </div>
             </div>
         </div>
@@ -404,6 +526,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
             var toggle = document.querySelector('.menu-toggle');
             var wrapper = document.querySelector('.nav-menu-wrapper');
             if (toggle && wrapper) {
@@ -413,6 +536,18 @@
                     this.setAttribute('aria-expanded', wrapper.classList.contains('open'));
                 });
             }
+
+            // Mobile dropdown toggle
+            document.querySelectorAll('.menu-item-has-children > a').forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        this.parentElement.classList.toggle('open');
+                    }
+                });
+            });
+
+            // Hero slider
             var slides = document.querySelectorAll('.hero-slide');
             var dots = document.querySelectorAll('.hero-dot');
             var current = 0;

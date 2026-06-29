@@ -1,0 +1,12 @@
+{
+  "name": "al-nuur-complex",
+  "version": "1.0.0",
+  "description": "Al-nuur Complex Furnitures and Pest Control Website",
+  "scripts": {
+    "build": "echo 'Static assets ready for deployment'",
+    "start": "npx serve public -p 3000"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

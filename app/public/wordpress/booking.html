@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book pest control services at Al Nuur Complex. Professional cockroach, bed bug, termite control in Kenya.">
+    <meta name="theme-color" content="#0D5C3F">
+    <title>Book Service | Al Nuur Complex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0D5C3F; --primary-dark: #083D2A; --gold: #D4AF37; --gold-light: #E8C547; --text: #1a1a1a; --text-light: #666; --bg: #fafafa; --white: #ffffff; --gray-100: #f5f5f5; --gray-200: #e5e5e5; --shadow: 0 4px 20px rgba(0,0,0,0.08); --danger: #dc3545; --success: #28a745; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .text-gold { color: var(--gold); }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; border: 2px solid transparent; }
+        .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); }
+
+        .site-header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary); padding: 8px 0; font-size: 13px; color: var(--white); }
+        .header-top-inner { display: flex; justify-content: space-between; align-items: center; }
+        .header-contacts { display: flex; gap: 20px; align-items: center; }
+        .header-contact-link { display: flex; align-items: center; gap: 6px; color: var(--white); }
+        .header-main { padding: 15px 0; }
+        .header-main-inner { display: flex; justify-content: space-between; align-items: center; }
+        .site-logo { display: flex; flex-direction: column; }
+        .site-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        .title-accent { color: var(--gold); }
+        .site-subtitle { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+        .main-nav ul { display: flex; gap: 30px; align-items: center; }
+        .main-nav a { font-weight: 500; color: var(--text); }
+        .main-nav a:hover { color: var(--primary); }
+
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 60px 0; text-align: center; color: var(--white); }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; margin-bottom: 15px; }
+        .page-subtitle { font-size: 18px; opacity: 0.9; }
+
+        .booking-section { padding: 60px 0; }
+        .booking-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px; }
+
+        .booking-info { padding-right: 30px; }
+        .info-card { background: var(--white); border-radius: 16px; padding: 30px; margin-bottom: 25px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .info-title { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; margin-bottom: 20px; color: var(--primary); }
+        .info-list li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 18px; }
+        .info-icon { width: 45px; height: 45px; background: var(--gray-100); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); flex-shrink: 0; }
+        .info-content h4 { font-weight: 600; margin-bottom: 4px; }
+        .info-content p { color: var(--text-light); font-size: 14px; }
+
+        .booking-form-container { background: var(--white); border-radius: 16px; padding: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        .form-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 600; margin-bottom: 30px; text-align: center; }
+        .form-group { margin-bottom: 22px; }
+        .form-label { display: block; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+        .form-label span { color: var(--danger); }
+        .form-input, .form-select, .form-textarea { width: 100%; padding: 14px 16px; border: 2px solid var(--gray-200); border-radius: 8px; font-size: 15px; font-family: inherit; transition: all 0.3s; background: var(--white); }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { outline: none; border-color: var(--primary); }
+        .form-textarea { min-height: 120px; resize: vertical; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+        .service-option { display: block; padding: 18px 20px; border: 2px solid var(--gray-200); border-radius: 10px; margin-bottom: 12px; cursor: pointer; transition: all 0.3s; position: relative; }
+        .service-option:hover { border-color: var(--primary); }
+        .service-option.selected { border-color: var(--primary); background: rgba(13,92,63,0.05); }
+        .service-option input { position: absolute; opacity: 0; }
+        .service-option-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
+        .service-option-name { font-weight: 600; font-size: 16px; }
+        .service-option-price { font-weight: 700; color: var(--gold); }
+        .service-option-desc { font-size: 13px; color: var(--text-light); }
+
+        .btn-submit { width: 100%; padding: 16px; font-size: 17px; margin-top: 10px; }
+
+        .form-message { padding: 15px 20px; border-radius: 8px; margin-bottom: 20px; display: none; }
+        .form-message.success { background: rgba(40,167,69,0.1); color: var(--success); border: 1px solid var(--success); display: block; }
+        .form-message.error { background: rgba(220,53,69,0.1); color: var(--danger); border: 1px solid var(--danger); display: block; }
+
+        .site-footer { background: var(--primary-dark); color: var(--white); padding-top: 70px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; }
+        .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .footer-desc { opacity: 0.85; line-height: 1.7; margin-bottom: 25px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .footer-social a:hover { background: var(--gold); }
+        .footer-heading { font-size: 17px; font-weight: 600; margin-bottom: 22px; color: var(--gold); }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { opacity: 0.85; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-contact li { display: flex; gap: 12px; margin-bottom: 14px; opacity: 0.85; }
+        .footer-hours li { display: flex; justify-content: space-between; margin-bottom: 12px; opacity: 0.85; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom { background: rgba(0,0,0,0.2); padding: 20px 0; text-align: center; opacity: 0.8; font-size: 14px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; }
+
+        @media (max-width: 1024px) { .booking-grid { grid-template-columns: 1fr; } .booking-info { padding-right: 0; } .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .form-row { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .page-title { font-size: 36px; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <span>Premium Furniture & Pest Control — Nairobi, Kenya</span>
+                    <div class="header-contacts">
+                        <a href="tel:+254758289578" class="header-contact-link">+254 758 289 578</a>
+                        <a href="https://wa.me/254758289578" target="_blank" class="header-contact-link">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="index.html" class="site-logo">
+                        <span class="site-title">Al Nuur <span class="title-accent">Complex</span></span>
+                        <span class="site-subtitle">Furnitures & Pest Control</span>
+                    </a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="furniture.html">Furniture</a></li>
+                            <li><a href="appliances.html">Appliances</a></li>
+                            <li><a href="pest-control.html">Pest Control</a></li>
+                            <li><a href="booking.html" class="btn btn-primary" style="color: white;">Book Now</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Book a Service</h1>
+                <p class="page-subtitle">Schedule your pest control service or furniture consultation</p>
+            </div>
+        </section>
+
+        <section class="booking-section">
+            <div class="container">
+                <div class="booking-grid">
+                    <div class="booking-info">
+                        <div class="info-card">
+                            <h3 class="info-title">Contact Information</h3>
+                            <ul class="info-list">
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Phone</h4>
+                                        <p>+254 758 289 578</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>WhatsApp</h4>
+                                        <p>+254 758 289 578</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Email</h4>
+                                        <p>info@alnuurcomplex.co.ke</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Location</h4>
+                                        <p>Nairobi, Kenya</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3 class="info-title">Working Hours</h3>
+                            <ul class="info-list">
+                                <li>
+                                    <div class="info-content">
+                                        <p><strong>Mon - Fri:</strong> 8:00 AM - 6:00 PM</p>
+                                        <p><strong>Saturday:</strong> 8:00 AM - 4:00 PM</p>
+                                        <p><strong>Sunday:</strong> 10:00 AM - 2:00 PM</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card">
+                            <h3 class="info-title">Why Book With Us?</h3>
+                            <ul class="info-list">
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Certified Experts</h4>
+                                        <p>Our team is fully certified and experienced</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Guaranteed Results</h4>
+                                        <p>We stand behind our work with warranties</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="info-icon">
+                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                                    </div>
+                                    <div class="info-content">
+                                        <h4>Same-Day Service</h4>
+                                        <p>Quick response for urgent pest problems</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="booking-form-container">
+                        <h2 class="form-title">Book Your Service</h2>
+
+                        <div id="form-message" class="form-message"></div>
+
+                        <form id="booking-form">
+                            <div class="form-group">
+                                <label class="form-label">Select Service <span>*</span></label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="cockroach" required>
+                                    <div class="service-option-header">
+                                        <span class="service-option-name">Cockroach Control</span>
+                                        <span class="service-option-price">KSh 8,000</span>
+                                    </div>
+                                    <span class="service-option-desc">Complete elimination of German and American cockroaches</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="bedbug">
+                                    <div class="service-option-header">
+                                        <span class="service-option-name">Bed Bug Treatment</span>
+                                        <span class="service-option-price">KSh 15,000</span>
+                                    </div>
+                                    <span class="service-option-desc">Heat treatment with 30-day guarantee (per room)</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="general">
+                                    <div class="service-option-header">
+                                        <span class="service-option-name">General Pest Control</span>
+                                        <span class="service-option-price">KSh 12,000</span>
+                                    </div>
+                                    <span class="service-option-desc">Full property treatment for ants, spiders, mice</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="termite">
+                                    <div class="service-option-header">
+                                        <span class="service-option-name">Termite Control</span>
+                                        <span class="service-option-price">KSh 25,000</span>
+                                    </div>
+                                    <span class="service-option-desc">Complete termite treatment with 1-year warranty</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="mosquito">
+                                    <div class="service-option-header">
+                                        <span class="service-option-name">Mosquito Control</span>
+                                        <span class="service-option-price">KSh 10,000</span>
+                                    </div>
+                                    <span class="service-option-desc">60-day protection from mosquitoes</span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="radio" name="service" value="rodent">
+                                    <div class="service-option-header">
+                                        <span class="service-option-name">Rodent Control</span>
+                                        <span class="service-option-price">KSh 12,000</span>
+                                    </div>
+                                    <span class="service-option-desc">Rat and mouse elimination with 90-day guarantee</span>
+                                </label>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="name">Full Name <span>*</span></label>
+                                    <input type="text" id="name" name="name" class="form-input" placeholder="Your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="phone">Phone Number <span>*</span></label>
+                                    <input type="tel" id="phone" name="phone" class="form-input" placeholder="+254 XXX XXX XXX" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com">
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="address">Property Address <span>*</span></label>
+                                    <input type="text" id="address" name="address" class="form-input" placeholder="Your address in Nairobi" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="date">Preferred Date <span>*</span></label>
+                                    <input type="date" id="date" name="date" class="form-input" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="message">Additional Details</label>
+                                <textarea id="message" name="message" class="form-textarea" placeholder="Describe your pest problem or specific requirements..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-submit">Book Appointment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <span class="footer-logo-text">Al Nuur <span class="title-accent">Complex</span></span>
+                    <p class="footer-desc">Your premier destination for premium furniture, home appliances, and professional pest control services in Kenya.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/254758289578" target="_blank">WhatsApp</a>
+                        <a href="tel:+254758289578">Call</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="appliances.html">Appliances</a></li>
+                        <li><a href="pest-control.html">Pest Control</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>Nairobi, Kenya</li>
+                        <li><a href="tel:+254758289578">+254 758 289 578</a></li>
+                        <li><a href="mailto:info@alnuurcomplex.co.ke">info@alnuurcomplex.co.ke</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Working Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Mon - Fri:</span> 8:00 AM - 6:00 PM</li>
+                        <li><span>Saturday:</span> 8:00 AM - 4:00 PM</li>
+                        <li><span>Sunday:</span> 10:00 AM - 2:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"><p>© 2025 Al Nuur Complex. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254758289578" target="_blank" class="whatsapp-float">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        // Set minimum date to today
+        const dateInput = document.getElementById('date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        // Service option selection
+        document.querySelectorAll('.service-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Validate
+            if (!data.service) {
+                showMessage('Please select a service', 'error');
+                return;
+            }
+
+            // Create WhatsApp message
+            const serviceNames = {
+                'cockroach': 'Cockroach Control (KSh 8,000)',
+                'bedbug': 'Bed Bug Treatment (KSh 15,000)',
+                'general': 'General Pest Control (KSh 12,000)',
+                'termite': 'Termite Control (KSh 25,000)',
+                'mosquito': 'Mosquito Control (KSh 10,000)',
+                'rodent': 'Rodent Control (KSh 12,000)'
+            };
+
+            const message = `*New Booking Request*\n\n` +
+                `*Service:* ${serviceNames[data.service]}\n` +
+                `*Name:* ${data.name}\n` +
+                `*Phone:* ${data.phone}\n` +
+                `*Email:* ${data.email || 'Not provided'}\n` +
+                `*Address:* ${data.address}\n` +
+                `*Preferred Date:* ${data.date}\n` +
+                `*Message:* ${data.message || 'No additional details'}`;
+
+            const whatsappUrl = `https://wa.me/254758289578?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+
+            showMessage('Thank you! You will be redirected to WhatsApp to confirm your booking.', 'success');
+            this.reset();
+            document.querySelectorAll('.service-option').forEach(o => o.classList.remove('selected'));
+        });
+
+        function showMessage(text, type) {
+            const msgEl = document.getElementById('form-message');
+            msgEl.textContent = text;
+            msgEl.className = 'form-message ' + type;
+            msgEl.style.display = 'block';
+            setTimeout(() => { msgEl.style.display = 'none'; }, 8000);
+        }
+    </script>
+</body>
+</html>

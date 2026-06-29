@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Al Nuur Complex — Premium Furniture & Pest Control Services in Kenya. Shop sofas, beds, mattresses, appliances and book pest control services.">
+    <meta name="theme-color" content="#0D5C3F">
+    <title>Al Nuur Complex - Premium Furniture & Pest Control Kenya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        :root {
+            --primary: #0D5C3F;
+            --primary-dark: #083D2A;
+            --gold: #D4AF37;
+            --gold-light: #E8C547;
+            --text: #1a1a1a;
+            --text-light: #666;
+            --bg: #fafafa;
+            --white: #ffffff;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .text-gold { color: var(--gold); }
+
+        /* Header Styles */
+        .site-header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary); padding: 8px 0; font-size: 13px; color: var(--white); }
+        .header-top-inner { display: flex; justify-content: space-between; align-items: center; }
+        .header-contacts { display: flex; gap: 20px; align-items: center; }
+        .header-contact-link { display: flex; align-items: center; gap: 6px; color: var(--white); }
+        .header-contact-link:hover { color: var(--gold-light); }
+        .header-main { padding: 15px 0; }
+        .header-main-inner { display: flex; justify-content: space-between; align-items: center; }
+        .site-logo { display: flex; flex-direction: column; }
+        .site-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        .title-accent { color: var(--gold); }
+        .site-subtitle { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+
+        .main-nav ul { display: flex; gap: 30px; align-items: center; }
+        .main-nav a { font-weight: 500; color: var(--text); position: relative; }
+        .main-nav a:hover { color: var(--primary); }
+        .main-nav a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--gold); transition: width 0.3s; }
+        .main-nav a:hover::after { width: 100%; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; border: 2px solid transparent; }
+        .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--primary); border-color: var(--primary); }
+        .btn-outline:hover { background: var(--primary); color: var(--white); }
+
+        /* Hero Section */
+        .hero-section { position: relative; height: 600px; overflow: hidden; }
+        .hero-slide { position: absolute; inset: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s; display: flex; align-items: center; }
+        .hero-slide.active { opacity: 1; }
+        .hero-content { max-width: 700px; color: var(--white); text-align: center; margin: 0 auto; }
+        .hero-badge { display: inline-block; background: var(--gold); color: var(--primary); padding: 6px 16px; border-radius: 30px; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: 56px; font-weight: 700; line-height: 1.2; margin-bottom: 20px; }
+        .hero-desc { font-size: 18px; margin-bottom: 30px; opacity: 0.95; }
+        .hero-ctas { display: flex; gap: 16px; justify-content: center; }
+        .hero-nav { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; }
+        .hero-dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,0.5); border: none; cursor: pointer; transition: all 0.3s; }
+        .hero-dot.active { background: var(--gold); transform: scale(1.3); }
+
+        /* Section Styles */
+        .section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 50px; }
+        .section-subtitle { display: inline-block; color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 2px; font-size: 13px; margin-bottom: 10px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; margin-bottom: 15px; }
+        .section-desc { color: var(--text-light); font-size: 17px; }
+
+        /* Categories */
+        .categories-section { background: var(--white); }
+        .categories-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .category-card { background: var(--gray-100); border-radius: 16px; padding: 40px 30px; text-align: center; transition: all 0.4s; border: 2px solid transparent; }
+        .category-card:hover { transform: translateY(-8px); border-color: var(--gold); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+        .category-icon { width: 80px; height: 80px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--white); }
+        .category-name { font-size: 22px; font-weight: 600; margin-bottom: 8px; }
+        .category-count { color: var(--text-light); font-size: 14px; margin-bottom: 15px; }
+        .category-arrow { display: inline-block; width: 40px; height: 40px; line-height: 40px; background: var(--white); border-radius: 50%; color: var(--primary); transition: all 0.3s; }
+        .category-card:hover .category-arrow { background: var(--gold); color: var(--white); }
+
+        /* Products Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
+        .product-image { height: 220px; background: var(--gray-200); position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        .product-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        .product-info { padding: 20px; }
+        .product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .product-desc { color: var(--text-light); font-size: 13px; margin-bottom: 12px; }
+        .product-price { font-size: 20px; font-weight: 700; color: var(--primary); }
+
+        /* Pest Services */
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-card { background: var(--white); border-radius: 16px; padding: 30px; border: 2px solid var(--gray-200); transition: all 0.3s; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+        .service-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--white); }
+        .service-name { font-size: 20px; font-weight: 600; margin-bottom: 12px; }
+        .service-desc { color: var(--text-light); margin-bottom: 20px; }
+        .service-price { font-size: 22px; font-weight: 700; color: var(--gold); }
+
+        /* Footer */
+        .site-footer { background: var(--primary-dark); color: var(--white); padding-top: 70px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; }
+        .footer-brand { }
+        .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .footer-desc { opacity: 0.85; line-height: 1.7; margin-bottom: 25px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .footer-social a:hover { background: var(--gold); }
+        .footer-heading { font-size: 17px; font-weight: 600; margin-bottom: 22px; color: var(--gold); }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { opacity: 0.85; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-contact li { display: flex; gap: 12px; margin-bottom: 14px; opacity: 0.85; }
+        .footer-hours li { display: flex; justify-content: space-between; margin-bottom: 12px; opacity: 0.85; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom { background: rgba(0,0,0,0.2); padding: 20px 0; text-align: center; opacity: 0.8; font-size: 14px; }
+
+        /* WhatsApp Float */
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .categories-grid, .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .header-top { display: none; }
+            .hero-title { font-size: 36px; }
+            .categories-grid, .services-grid, .products-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-ctas { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <span>Premium Furniture & Pest Control — Nairobi, Kenya</span>
+                    <div class="header-contacts">
+                        <a href="tel:+254758289578" class="header-contact-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            +254 758 289 578
+                        </a>
+                        <a href="https://wa.me/254758289578" target="_blank" class="header-contact-link whatsapp-link">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                            WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="index.html" class="site-logo">
+                        <span class="site-title">Al Nuur <span class="title-accent">Complex</span></span>
+                        <span class="site-subtitle">Furnitures & Pest Control</span>
+                    </a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="furniture.html">Furniture</a></li>
+                            <li><a href="appliances.html">Appliances</a></li>
+                            <li><a href="pest-control.html">Pest Control</a></li>
+                            <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="hero-slide active" style="background-image: linear-gradient(135deg, rgba(13,92,63,0.55) 0%, rgba(8,61,42,0.5) 100%), url('IMAGES/Sofas 1.jpg');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Premium Quality</span>
+                        <h1 class="hero-title">Elegant Furniture for <span class="text-gold">Modern Living</span></h1>
+                        <p class="hero-desc">Discover Kenya's finest collection of luxury furniture, home appliances, and professional pest control services.</p>
+                        <div class="hero-ctas">
+                            <a href="furniture.html" class="btn btn-primary">Explore Furniture</a>
+                            <a href="appliances.html" class="btn btn-outline">Shop Appliances</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: linear-gradient(135deg, rgba(13,92,63,0.55) 0%, rgba(8,61,42,0.5) 100%), url('IMAGES/refrigerators and freezers 1.jpg');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Top Brands</span>
+                        <h1 class="hero-title">Home Appliances at <span class="text-gold">Best Prices</span></h1>
+                        <p class="hero-desc">From refrigerators to air conditioners — quality appliances for every home and budget.</p>
+                        <div class="hero-ctas">
+                            <a href="appliances.html" class="btn btn-primary">Shop Now</a>
+                            <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: linear-gradient(135deg, rgba(13,92,63,0.55) 0%, rgba(8,61,42,0.5) 100%), url('IMAGES/Bed Bug Treatment 1.jpg');">
+                <div class="container">
+                    <div class="hero-content">
+                        <span class="hero-badge">Professional Service</span>
+                        <h1 class="hero-title">Pest Control You Can <span class="text-gold">Trust</span></h1>
+                        <p class="hero-desc">Protect your home and family with our certified pest control solutions. Fast, safe, and effective.</p>
+                        <div class="hero-ctas">
+                            <a href="pest-control.html" class="btn btn-primary">Our Services</a>
+                            <a href="booking.html" class="btn btn-outline">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-nav">
+                <button class="hero-dot active" data-slide="0"></button>
+                <button class="hero-dot" data-slide="1"></button>
+                <button class="hero-dot" data-slide="2"></button>
+            </div>
+        </section>
+
+        <section class="section categories-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">What We Offer</span>
+                    <h2 class="section-title">Shop by <span class="text-gold">Category</span></h2>
+                    <p class="section-desc">Explore our wide range of premium furniture and home appliances</p>
+                </div>
+                <div class="categories-grid">
+                    <a href="furniture.html" class="category-card card-furniture">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 10V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 14v3a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2h14v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-3"/><path d="M6 10h12v4H6z"/></svg>
+                        </div>
+                        <h3 class="category-name">Furniture</h3>
+                        <p class="category-count">Sofas, Beds, Dining & More</p>
+                        <span class="category-arrow">→</span>
+                    </a>
+                    <a href="appliances.html" class="category-card card-appliances">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="7" width="20" height="12" rx="2"/><polyline points="7 19 7 21 17 21 17 19"/><line x1="12" y1="7" x2="12" y2="4"/><line x1="12" y1="4" x2="15" y2="1"/><line x1="12" y1="4" x2="9" y2="1"/></svg>
+                        </div>
+                        <h3 class="category-name">Appliances</h3>
+                        <p class="category-count">Fridges, TVs, ACs & More</p>
+                        <span class="category-arrow">→</span>
+                    </a>
+                    <a href="pest-control.html" class="category-card card-pest">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <h3 class="category-name">Pest Control</h3>
+                        <p class="category-count">Cockroach, Bed Bug, Termite & More</p>
+                        <span class="category-arrow">→</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Featured Products</span>
+                    <h2 class="section-title">Featured <span class="text-gold">Furniture</span></h2>
+                    <p class="section-desc">Handpicked premium pieces for your home</p>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('IMAGES/Sofas 1.jpg'); background-size: cover; background-position: center;">
+                            <span class="product-badge">Featured</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Classic Velvet Sofa Set</h3>
+                            <p class="product-desc">Elegant 3-seater velvet sofa with plush cushioning.</p>
+                            <div class="product-price">KSh 45,000</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('IMAGES/Beds.jpg'); background-size: cover; background-position: center;">
+                            <span class="product-badge">Featured</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Classic Wooden Bed Frame</h3>
+                            <p class="product-desc">Solid wood bed frame with slatted base.</p>
+                            <div class="product-price">KSh 28,000</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('IMAGES/Orthobliss orthopedic mattress.jpg'); background-size: cover; background-position: center;">
+                            <span class="product-badge">Featured</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">Orthopedic Memory Foam Mattress</h3>
+                            <p class="product-desc">Pressure-relieving memory foam for spinal alignment.</p>
+                            <div class="product-price">KSh 25,000</div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image" style="background-image: url('IMAGES/Dining Sets 1.jpg'); background-size: cover; background-position: center;">
+                            <span class="product-badge">Featured</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-name">6-Seater Dining Set</h3>
+                            <p class="product-desc">Solid wood table with 6 upholstered chairs.</p>
+                            <div class="product-price">KSh 55,000</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="furniture.html" class="btn btn-primary">View All Products</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 80px 0;">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 0;">
+                    <h2 class="section-title" style="color: white;">Ready to Transform Your Home?</h2>
+                    <p class="section-desc" style="color: rgba(255,255,255,0.9);">Contact us today for a free consultation and quote. Our team is ready to help you create the perfect space.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; margin-top: 30px;">
+                        <a href="contact.html" class="btn btn-primary" style="background: var(--gold); border-color: var(--gold); color: var(--primary-dark);">Contact Us</a>
+                        <a href="booking.html" class="btn btn-outline" style="border-color: white; color: white;">Book Service</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-brand">
+                    <span class="footer-logo-text">Al Nuur <span class="title-accent">Complex</span></span>
+                    <p class="footer-desc">Your premier destination for premium furniture, home appliances, and professional pest control services in Kenya.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/254758289578" target="_blank" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="tel:+254758289578" aria-label="Phone">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="appliances.html">Appliances</a></li>
+                        <li><a href="pest-control.html">Pest Control</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            Nairobi, Kenya
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <a href="tel:+254758289578">+254 758 289 578</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <a href="mailto:info@alnuurcomplex.co.ke">info@alnuurcomplex.co.ke</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Working Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Mon - Fri:</span> 8:00 AM - 6:00 PM</li>
+                        <li><span>Saturday:</span> 8:00 AM - 4:00 PM</li>
+                        <li><span>Sunday:</span> 10:00 AM - 2:00 PM</page>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>© 2025 Al Nuur Complex. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254758289578" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Chat on WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var toggle = document.querySelector('.menu-toggle');
+            var wrapper = document.querySelector('.nav-menu-wrapper');
+            if (toggle && wrapper) {
+                toggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    wrapper.classList.toggle('open');
+                    this.setAttribute('aria-expanded', wrapper.classList.contains('open'));
+                });
+            }
+            var slides = document.querySelectorAll('.hero-slide');
+            var dots = document.querySelectorAll('.hero-dot');
+            var current = 0;
+            if (slides.length > 1) {
+                function showSlide(index) {
+                    slides.forEach(function(slide) { slide.classList.remove('active'); });
+                    dots.forEach(function(dot) { dot.classList.remove('active'); });
+                    slides[index].classList.add('active');
+                    dots[index].classList.add('active');
+                    current = index;
+                }
+                dots.forEach(function(dot, i) {
+                    dot.addEventListener('click', function() { showSlide(i); });
+                });
+                setInterval(function() { showSlide((current + 1) % slides.length); }, 6000);
+            }
+        });
+    </script>
+</body>
+</html>

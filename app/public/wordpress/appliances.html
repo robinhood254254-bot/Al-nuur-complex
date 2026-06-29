@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Al Nuur Complex — Premium Home Appliances in Kenya. Shop refrigerators, washing machines, TVs, air conditioners, cookers, and more.">
+    <meta name="theme-color" content="#0D5C3F">
+    <title>Appliances | Al Nuur Complex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0D5C3F; --primary-dark: #083D2A; --gold: #D4AF37; --gold-light: #E8C547; --text: #1a1a1a; --text-light: #666; --bg: #fafafa; --white: #ffffff; --gray-100: #f5f5f5; --gray-200: #e5e5e5; --shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .text-gold { color: var(--gold); }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; border: 2px solid transparent; }
+        .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); }
+
+        .site-header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary); padding: 8px 0; font-size: 13px; color: var(--white); }
+        .header-top-inner { display: flex; justify-content: space-between; align-items: center; }
+        .header-contacts { display: flex; gap: 20px; align-items: center; }
+        .header-contact-link { display: flex; align-items: center; gap: 6px; color: var(--white); }
+        .header-main { padding: 15px 0; }
+        .header-main-inner { display: flex; justify-content: space-between; align-items: center; }
+        .site-logo { display: flex; flex-direction: column; }
+        .site-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        .title-accent { color: var(--gold); }
+        .site-subtitle { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+        .main-nav ul { display: flex; gap: 30px; align-items: center; }
+        .main-nav a { font-weight: 500; color: var(--text); }
+        .main-nav a:hover { color: var(--primary); }
+
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 60px 0; text-align: center; color: var(--white); }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; margin-bottom: 15px; }
+        .page-subtitle { font-size: 18px; opacity: 0.9; }
+
+        .section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+
+        .categories-tabs { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; padding: 0 20px; }
+        .category-tab { padding: 10px 24px; background: var(--white); border: 2px solid var(--gray-200); border-radius: 30px; font-weight: 500; cursor: pointer; transition: all 0.3s; }
+        .category-tab:hover, .category-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
+        .product-image { height: 220px; background: var(--gray-200); position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        .product-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        .product-info { padding: 20px; }
+        .product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .product-desc { color: var(--text-light); font-size: 13px; margin-bottom: 12px; }
+        .product-price { font-size: 20px; font-weight: 700; color: var(--primary); }
+
+        .site-footer { background: var(--primary-dark); color: var(--white); padding-top: 70px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; }
+        .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .footer-desc { opacity: 0.85; line-height: 1.7; margin-bottom: 25px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .footer-social a:hover { background: var(--gold); }
+        .footer-heading { font-size: 17px; font-weight: 600; margin-bottom: 22px; color: var(--gold); }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { opacity: 0.85; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-contact li { display: flex; gap: 12px; margin-bottom: 14px; opacity: 0.85; }
+        .footer-hours li { display: flex; justify-content: space-between; margin-bottom: 12px; opacity: 0.85; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom { background: rgba(0,0,0,0.2); padding: 20px 0; text-align: center; opacity: 0.8; font-size: 14px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; }
+
+        @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(3, 1fr); } .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .products-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: 1fr; } .page-title { font-size: 36px; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <span>Premium Furniture & Pest Control — Nairobi, Kenya</span>
+                    <div class="header-contacts">
+                        <a href="tel:+254758289578" class="header-contact-link">+254 758 289 578</a>
+                        <a href="https://wa.me/254758289578" target="_blank" class="header-contact-link">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="index.html" class="site-logo">
+                        <span class="site-title">Al Nuur <span class="title-accent">Complex</span></span>
+                        <span class="site-subtitle">Furnitures & Pest Control</span>
+                    </a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="furniture.html">Furniture</a></li>
+                            <li><a href="appliances.html" style="color: var(--primary);">Appliances</a></li>
+                            <li><a href="pest-control.html">Pest Control</a></li>
+                            <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Home Appliances</h1>
+                <p class="page-subtitle">Quality appliances for every home — from refrigerators to air conditioners</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="categories-tabs">
+                    <button class="category-tab active" data-category="all">All</button>
+                    <button class="category-tab" data-category="refrigerators">Refrigerators</button>
+                    <button class="category-tab" data-category="washing">Washing Machines</button>
+                    <button class="category-tab" data-category="televisions">Televisions</button>
+                    <button class="category-tab" data-category="airconditioners">Air Conditioners</button>
+                    <button class="category-tab" data-category="cookers">Cookers & Ovens</button>
+                    <button class="category-tab" data-category="microwaves">Microwaves</button>
+                    <button class="category-tab" data-category="dispensers">Water Dispensers</button>
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                    <!-- Refrigerators -->
+                    <div class="product-card" data-category="refrigerators">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/refrigerators and freezers 1.jpg" alt="Double Door Refrigerator"></div>
+                        <div class="product-info"><h3 class="product-name">Double Door Refrigerator</h3><p class="product-desc">Spacious 500L double door fridge with freezer.</p><div class="product-price">KSh 95,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="refrigerators">
+                        <div class="product-image"><img src="IMAGES/refrigerators and freezers 2.jpg" alt="Single Door Refrigerator"></div>
+                        <div class="product-info"><h3 class="product-name">Single Door Refrigerator</h3><p class="product-desc">Compact 300L fridge ideal for small kitchens.</p><div class="product-price">KSh 55,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="refrigerators">
+                        <div class="product-image"><img src="IMAGES/refrigerators and freezers 3.jpg" alt="Side-by-Side Refrigerator"></div>
+                        <div class="product-info"><h3 class="product-name">Side-by-Side Refrigerator</h3><p class="product-desc">Luxury 600L fridge with water dispenser.</p><div class="product-price">KSh 145,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="refrigerators">
+                        <div class="product-image"><img src="IMAGES/refrigerators and freezers 4.jpg" alt="Mini Refrigerator"></div>
+                        <div class="product-info"><h3 class="product-name">Mini Refrigerator</h3><p class="product-desc">Compact 100L fridge for offices and dorms.</p><div class="product-price">KSh 25,000</div></div>
+                    </div>
+
+                    <!-- Washing Machines -->
+                    <div class="product-card" data-category="washing">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Washing Machines 1.jpg" alt="Front Load Washing Machine"></div>
+                        <div class="product-info"><h3 class="product-name">Front Load Washing Machine</h3><p class="product-desc">8kg front loader with steam clean.</p><div class="product-price">KSh 75,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="washing">
+                        <div class="product-image"><img src="IMAGES/Washing Machines 2.jpg" alt="Top Load Washing Machine"></div>
+                        <div class="product-info"><h3 class="product-name">Top Load Washing Machine</h3><p class="product-desc">7kg top loader with fuzzy logic.</p><div class="product-price">KSh 45,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="washing">
+                        <div class="product-image"><img src="IMAGES/Washing Machines 3.jpg" alt="Fully Automatic Washer"></div>
+                        <div class="product-info"><h3 class="product-name">Fully Automatic Washer</h3><p class="product-desc">10kg capacity with dryer combo.</p><div class="product-price">KSh 95,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="washing">
+                        <div class="product-image"><img src="IMAGES/Washing Machines 4.jpg" alt="Semi-Automatic Washer"></div>
+                        <div class="product-info"><h3 class="product-name">Semi-Automatic Washer</h3><p class="product-desc">Budget-friendly twin tub washer.</p><div class="product-price">KSh 28,000</div></div>
+                    </div>
+
+                    <!-- Televisions -->
+                    <div class="product-card" data-category="televisions">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Televisions 1.jpg" alt="55 inch Smart TV"></div>
+                        <div class="product-info"><h3 class="product-name">55" Smart TV 4K</h3><p class="product-desc">Ultra HD smart TV with streaming apps.</p><div class="product-price">KSh 85,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="televisions">
+                        <div class="product-image"><img src="IMAGES/Televisions 2.jpg" alt="43 inch LED TV"></div>
+                        <div class="product-info"><h3 class="product-name">43" LED TV</h3><p class="product-desc">Full HD LED television.</p><div class="product-price">KSh 42,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="televisions">
+                        <div class="product-image"><img src="IMAGES/Televisions 3.jpg" alt="65 inch OLED TV"></div>
+                        <div class="product-info"><h3 class="product-name">65" OLED TV</h3><p class="product-desc">Premium OLED with HDR10+.</p><div class="product-price">KSh 250,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="televisions">
+                        <div class="product-image"><img src="IMAGES/Televisions 4.jpg" alt="32 inch HD TV"></div>
+                        <div class="product-info"><h3 class="product-name">32" HD TV</h3><p class="product-desc">Compact HD TV for bedrooms.</p><div class="product-price">KSh 25,000</div></div>
+                    </div>
+
+                    <!-- Air Conditioners -->
+                    <div class="product-card" data-category="airconditioners">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Air Conditioners 1.jpg" alt="Split AC 1.5 Ton"></div>
+                        <div class="product-info"><h3 class="product-name">Split AC 1.5 Ton</h3><p class="product-desc">Inverter split air conditioner with remote.</p><div class="product-price">KSh 75,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="airconditioners">
+                        <div class="product-image"><img src="IMAGES/Air Conditioners 2.jpg" alt="Window AC 1 Ton"></div>
+                        <div class="product-info"><h3 class="product-name">Window AC 1 Ton</h3><p class="product-desc">Classic window air conditioner.</p><div class="product-price">KSh 45,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="airconditioners">
+                        <div class="product-image"><img src="IMAGES/Air Conditioners 3.jpg" alt="Portable AC"></div>
+                        <div class="product-info"><h3 class="product-name">Portable AC</h3><p class="product-desc">Mobile air cooler for any room.</p><div class="product-price">KSh 55,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="airconditioners">
+                        <div class="product-image"><img src="IMAGES/Air Conditioners 4.jpg" alt="Central AC System"></div>
+                        <div class="product-info"><h3 class="product-name">Central AC System</h3><p class="product-desc">Whole house cooling solution.</p><div class="product-price">KSh 350,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="airconditioners">
+                        <div class="product-image"><img src="IMAGES/Air Conditioners 5.jpg" alt="2 Ton Split AC"></div>
+                        <div class="product-info"><h3 class="product-name">2 Ton Split AC</h3><p class="product-desc">Powerful inverter AC for large rooms.</p><div class="product-price">KSh 95,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="airconditioners">
+                        <div class="product-image"><img src="IMAGES/Air Conditioners 6.jpg" alt="Mini Split AC"></div>
+                        <div class="product-info"><h3 class="product-name">Mini Split AC</h3><p class="product-desc">Compact inverter for small spaces.</p><div class="product-price">KSh 55,000</div></div>
+                    </div>
+
+                    <!-- Cookers -->
+                    <div class="product-card" data-category="cookers">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Cookers 1.jpg" alt="Electric Cooker with Oven"></div>
+                        <div class="product-info"><h3 class="product-name">Electric Cooker with Oven</h3><p class="product-desc">60cm cooker with 4 burners and oven.</p><div class="product-price">KSh 65,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="cookers">
+                        <div class="product-image"><img src="IMAGES/gas burner.jpg" alt="Gas Cooker 4 Burner"></div>
+                        <div class="product-info"><h3 class="product-name">Gas Cooker 4 Burner</h3><p class="product-desc">Stainless steel gas cooker.</p><div class="product-price">KSh 35,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="cookers">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/4 gas burner and one electric.jpg" alt="Gas + Electric Cooker"></div>
+                        <div class="product-info"><h3 class="product-name">Gas + Electric Cooker</h3><p class="product-desc">4 gas burners + electric hotplate.</p><div class="product-price">KSh 55,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="cookers">
+                        <div class="product-image"><img src="IMAGES/Tempered Glass Built-in 4-Burner Gas Cooktop Cooking Range With Oven.jpg" alt="Built-in Cooker"></div>
+                        <div class="product-info"><h3 class="product-name">Built-in Cooker Set</h3><p class="product-desc">Modern built-in cooking range.</p><div class="product-price">KSh 85,000</div></div>
+                    </div>
+
+                    <!-- Microwaves -->
+                    <div class="product-card" data-category="microwaves">
+                        <div class="product-image"><img src="IMAGES/microwaves picture 1.jpg" alt="Solo Microwave"></div>
+                        <div class="product-info"><h3 class="product-name">Solo Microwave 20L</h3><p class="product-desc">Basic microwave for heating.</p><div class="product-price">KSh 18,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="microwaves">
+                        <div class="product-image"><img src="IMAGES/microwaves picture 2.jpg" alt="Grill Microwave"></div>
+                        <div class="product-info"><h3 class="product-name">Grill Microwave 25L</h3><p class="product-desc">Microwave with grill function.</p><div class="product-price">KSh 28,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="microwaves">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/microwaves picture 3.jpg" alt=" convection Microwave"></div>
+                        <div class="product-info"><h3 class="product-name">Convection Microwave</h3><p class="product-desc">Multi-function with convection oven.</p><div class="product-price">KSh 45,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="microwaves">
+                        <div class="product-image"><img src="IMAGES/microwaves picture 4.jpg" alt="Inverter Microwave"></div>
+                        <div class="product-info"><h3 class="product-name">Inverter Microwave</h3><p class="product-desc">Energy-efficient inverter technology.</p><div class="product-price">KSh 38,000</div></div>
+                    </div>
+
+                    <!-- Water Dispensers -->
+                    <div class="product-card" data-category="dispensers">
+                        <div class="product-image"><img src="IMAGES/Water Dispensers pictures 1.jpg" alt="Table Top Dispenser"></div>
+                        <div class="product-info"><h3 class="product-name">Table Top Dispenser</h3><p class="product-desc">Compact water dispenser.</p><div class="product-price">KSh 12,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="dispensers">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Water Dispensers pictures 2.jpg" alt="Floor Standing Dispenser"></div>
+                        <div class="product-info"><h3 class="product-name">Floor Standing Dispenser</h3><p class="product-desc">Hot & cold water dispenser.</p><div class="product-price">KSh 22,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="dispensers">
+                        <div class="product-image"><img src="IMAGES/Water Dispensers pictures 3.jpg" alt="Smart Dispenser"></div>
+                        <div class="product-info"><h3 class="product-name">Smart Water Dispenser</h3><p class="product-desc">With purification system.</p><div class="product-price">KSh 35,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="dispensers">
+                        <div class="product-image"><img src="IMAGES/Water Dispensers pictures 4.jpg" alt="Eco Dispenser"></div>
+                        <div class="product-info"><h3 class="product-name">Eco Water Dispenser</h3><p class="product-desc">Energy-saving design.</p><div class="product-price">KSh 18,000</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <span class="footer-logo-text">Al Nuur <span class="title-accent">Complex</span></span>
+                    <p class="footer-desc">Your premier destination for premium furniture, home appliances, and professional pest control services in Kenya.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/254758289578" target="_blank">WhatsApp</a>
+                        <a href="tel:+254758289578">Call</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="appliances.html">Appliances</a></li>
+                        <li><a href="pest-control.html">Pest Control</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>Nairobi, Kenya</li>
+                        <li><a href="tel:+254758289578">+254 758 289 578</a></li>
+                        <li><a href="mailto:info@alnuurcomplex.co.ke">info@alnuurcomplex.co.ke</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Working Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Mon - Fri:</span> 8:00 AM - 6:00 PM</li>
+                        <li><span>Saturday:</span> 8:00 AM - 4:00 PM</li>
+                        <li><span>Sunday:</span> 10:00 AM - 2:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"><p>© 2025 Al Nuur Complex. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254758289578" target="_blank" class="whatsapp-float">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.dataset.category;
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

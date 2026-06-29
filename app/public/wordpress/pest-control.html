@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Al Nuur Complex — Professional Pest Control Services in Kenya. Cockroach, bed bug, termite, mosquito control and more.">
+    <meta name="theme-color" content="#0D5C3F">
+    <title>Pest Control Services | Al Nuur Complex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0D5C3F; --primary-dark: #083D2A; --gold: #D4AF37; --gold-light: #E8C547; --text: #1a1a1a; --text-light: #666; --bg: #fafafa; --white: #ffffff; --gray-100: #f5f5f5; --gray-200: #e5e5e5; --shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .text-gold { color: var(--gold); }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; border: 2px solid transparent; }
+        .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); }
+
+        .site-header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary); padding: 8px 0; font-size: 13px; color: var(--white); }
+        .header-top-inner { display: flex; justify-content: space-between; align-items: center; }
+        .header-contacts { display: flex; gap: 20px; align-items: center; }
+        .header-contact-link { display: flex; align-items: center; gap: 6px; color: var(--white); }
+        .header-main { padding: 15px 0; }
+        .header-main-inner { display: flex; justify-content: space-between; align-items: center; }
+        .site-logo { display: flex; flex-direction: column; }
+        .site-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        .title-accent { color: var(--gold); }
+        .site-subtitle { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+        .main-nav ul { display: flex; gap: 30px; align-items: center; }
+        .main-nav a { font-weight: 500; color: var(--text); }
+        .main-nav a:hover { color: var(--primary); }
+
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 60px 0; text-align: center; color: var(--white); }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; margin-bottom: 15px; }
+        .page-subtitle { font-size: 18px; opacity: 0.9; }
+
+        .section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+        .section-desc { color: var(--text-light); font-size: 17px; max-width: 600px; margin: 0 auto; }
+
+        .features-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; margin-bottom: 50px; }
+        .feature-card { background: var(--white); border-radius: 12px; padding: 30px; text-align: center; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .feature-icon { width: 60px; height: 60px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--white); }
+        .feature-name { font-size: 16px; font-weight: 600; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .service-card { background: var(--white); border-radius: 16px; padding: 30px; border: 2px solid var(--gray-200); transition: all 0.3s; }
+        .service-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .service-image { height: 200px; border-radius: 12px; overflow: hidden; margin-bottom: 20px; background: var(--gray-200); }
+        .service-image img { width: 100%; height: 100%; object-fit: cover; }
+        .service-icon { width: 70px; height: 70px; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--white); }
+        .service-name { font-size: 22px; font-weight: 600; margin-bottom: 12px; }
+        .service-desc { color: var(--text-light); margin-bottom: 15px; line-height: 1.7; }
+        .service-features { margin-bottom: 20px; }
+        .service-features li { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; color: var(--text-light); }
+        .service-features svg { width: 18px; height: 18px; color: var(--primary); flex-shrink: 0; }
+        .service-price { font-size: 24px; font-weight: 700; color: var(--gold); margin-bottom: 20px; }
+        .service-price span { font-size: 14px; font-weight: 400; color: var(--text-light); }
+
+        .cta-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 60px 0; text-align: center; color: var(--white); }
+        .cta-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin-bottom: 15px; }
+        .cta-desc { font-size: 18px; opacity: 0.9; margin-bottom: 25px; }
+
+        .site-footer { background: var(--primary-dark); color: var(--white); padding-top: 70px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; }
+        .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .footer-desc { opacity: 0.85; line-height: 1.7; margin-bottom: 25px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .footer-social a:hover { background: var(--gold); }
+        .footer-heading { font-size: 17px; font-weight: 600; margin-bottom: 22px; color: var(--gold); }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { opacity: 0.85; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-contact li { display: flex; gap: 12px; margin-bottom: 14px; opacity: 0.85; }
+        .footer-hours li { display: flex; justify-content: space-between; margin-bottom: 12px; opacity: 0.85; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom { background: rgba(0,0,0,0.2); padding: 20px 0; text-align: center; opacity: 0.8; font-size: 14px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; }
+
+        @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } .features-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .services-grid, .features-grid { grid-template-columns: 1fr; } .footer-grid { grid-template-columns: 1fr; } .page-title { font-size: 36px; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <span>Premium Furniture & Pest Control — Nairobi, Kenya</span>
+                    <div class="header-contacts">
+                        <a href="tel:+254758289578" class="header-contact-link">+254 758 289 578</a>
+                        <a href="https://wa.me/254758289578" target="_blank" class="header-contact-link">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="index.html" class="site-logo">
+                        <span class="site-title">Al Nuur <span class="title-accent">Complex</span></span>
+                        <span class="site-subtitle">Furnitures & Pest Control</span>
+                    </a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="furniture.html">Furniture</a></li>
+                            <li><a href="appliances.html">Appliances</a></li>
+                            <li><a href="pest-control.html" style="color: var(--primary);">Pest Control</a></li>
+                            <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Pest Control Services</h1>
+                <p class="page-subtitle">Professional pest management solutions to protect your home and family</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Our <span class="text-gold">Pest Control</span></h2>
+                    <p class="section-desc">We use safe, effective, and environmentally friendly methods to eliminate pests from your property.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="feature-name">Certified Experts</h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                        </div>
+                        <h3 class="feature-name">Guaranteed Results</h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                        </div>
+                        <h3 class="feature-name">Safe & Eco-Friendly</h3>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h3 class="feature-name">Quick Response</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--gray-100);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our <span class="text-gold">Services</span></h2>
+                    <p class="section-desc">Comprehensive pest control solutions for residential and commercial properties</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image"><img src="IMAGES/Cockroach Control.jpg" alt="Cockroach Control"></div>
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="service-name">Cockroach Control</h3>
+                        <p class="service-desc">Complete elimination of German and American cockroaches using advanced treatment methods.</p>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Initial inspection & assessment</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Gel bait application</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Residual spray treatment</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Follow-up visit included</li>
+                        </ul>
+                        <div class="service-price">KSh 8,000 <span>/ session</span></div>
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image"><img src="IMAGES/Bed Bug Treatment.jpg" alt="Bed Bug Treatment"></div>
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v8"/><path d="M8 12h8"/></svg>
+                        </div>
+                        <h3 class="service-name">Bed Bug Treatment</h3>
+                        <p class="service-desc">Thorough heat treatment and chemical solutions to eliminate bed bugs at all life stages.</p>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Comprehensive inspection</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Heat treatment (60°C+)</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Chemical treatment</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 30-day guarantee</li>
+                        </ul>
+                        <div class="service-price">KSh 15,000 <span>/ room</span></div>
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image"><img src="IMAGES/Pest Control.jpg" alt="General Pest Control"></div>
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+                        </div>
+                        <h3 class="service-name">General Pest Control</h3>
+                        <p class="service-desc">Complete pest management for ants, spiders, mice, rats, and other common pests.</p>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Full property inspection</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Customized treatment plan</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Interior & exterior treatment</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 90-day protection</li>
+                        </ul>
+                        <div class="service-price">KSh 12,000 <span>/ property</span></div>
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image"><img src="IMAGES/Cockroach Control 1.jpg" alt="Termite Control"></div>
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="service-name">Termite Control</h3>
+                        <p class="service-desc">Protect your wooden furniture and structure from destructive termite damage.</p>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Termite inspection</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Soil treatment</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Wood treatment</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 1-year warranty</li>
+                        </ul>
+                        <div class="service-price">KSh 25,000 <span>/ property</span></div>
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image"><img src="IMAGES/Bed Bug Treatment 1.jpg" alt="Mosquito Control"></div>
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="service-name">Mosquito Control</h3>
+                        <p class="service-desc">Reduce mosquito populations and protect your family from mosquito-borne diseases.</p>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Source reduction</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Larviciding</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Adulticiding</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 60-day protection</li>
+                        </ul>
+                        <div class="service-price">KSh 10,000 <span>/ session</span></div>
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-image"><img src="IMAGES/Cockroach Control 2.jpg" alt="Rodent Control"></div>
+                        <div class="service-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="service-name">Rodent Control</h3>
+                        <p class="service-desc">Effective elimination of rats and mice from your property with preventive measures.</p>
+                        <ul class="service-features">
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Inspection & identification</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Trapping & baiting</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> Exclusion sealing</li>
+                            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg> 90-day guarantee</li>
+                        </ul>
+                        <div class="service-price">KSh 12,000 <span>/ property</span></div>
+                        <a href="booking.html" class="btn btn-primary" style="width: 100%; text-align: center;">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="container">
+                <h2 class="cta-title">Protect Your Home Today</h2>
+                <p class="cta-desc">Get a free consultation and quote for your pest control needs.</p>
+                <a href="booking.html" class="btn" style="background: var(--gold); border-color: var(--gold); color: var(--primary-dark);">Book a Service</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <span class="footer-logo-text">Al Nuur <span class="title-accent">Complex</span></span>
+                    <p class="footer-desc">Your premier destination for premium furniture, home appliances, and professional pest control services in Kenya.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/254758289578" target="_blank">WhatsApp</a>
+                        <a href="tel:+254758289578">Call</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="appliances.html">Appliances</a></li>
+                        <li><a href="pest-control.html">Pest Control</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>Nairobi, Kenya</li>
+                        <li><a href="tel:+254758289578">+254 758 289 578</a></li>
+                        <li><a href="mailto:info@alnuurcomplex.co.ke">info@alnuurcomplex.co.ke</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Working Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Mon - Fri:</span> 8:00 AM - 6:00 PM</li>
+                        <li><span>Saturday:</span> 8:00 AM - 4:00 PM</li>
+                        <li><span>Sunday:</span> 10:00 AM - 2:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"><p>© 2025 Al Nuur Complex. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254758289578" target="_blank" class="whatsapp-float">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+</body>
+</html>

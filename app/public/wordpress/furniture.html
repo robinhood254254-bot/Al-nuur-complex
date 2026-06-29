@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Al Nuur Complex — Premium Furniture in Kenya. Shop sofas, beds, mattresses, dining sets, wardrobes, office furniture, and more.">
+    <meta name="theme-color" content="#0D5C3F">
+    <title>Furniture | Al Nuur Complex</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary: #0D5C3F; --primary-dark: #083D2A; --gold: #D4AF37; --gold-light: #E8C547; --text: #1a1a1a; --text-light: #666; --bg: #fafafa; --white: #ffffff; --gray-100: #f5f5f5; --gray-200: #e5e5e5; --shadow: 0 4px 20px rgba(0,0,0,0.08); }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+        a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; }
+        .text-gold { color: var(--gold); }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 6px; font-weight: 600; cursor: pointer; border: 2px solid transparent; }
+        .btn-primary { background: var(--primary); color: var(--white); border-color: var(--primary); }
+        .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); transform: translateY(-2px); }
+
+        /* Header */
+        .site-header { background: var(--white); box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; }
+        .header-top { background: var(--primary); padding: 8px 0; font-size: 13px; color: var(--white); }
+        .header-top-inner { display: flex; justify-content: space-between; align-items: center; }
+        .header-contacts { display: flex; gap: 20px; align-items: center; }
+        .header-contact-link { display: flex; align-items: center; gap: 6px; color: var(--white); }
+        .header-main { padding: 15px 0; }
+        .header-main-inner { display: flex; justify-content: space-between; align-items: center; }
+        .site-logo { display: flex; flex-direction: column; }
+        .site-title { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--primary); }
+        .title-accent { color: var(--gold); }
+        .site-subtitle { font-size: 12px; color: var(--text-light); letter-spacing: 1px; text-transform: uppercase; }
+        .main-nav ul { display: flex; gap: 30px; align-items: center; }
+        .main-nav a { font-weight: 500; color: var(--text); }
+        .main-nav a:hover { color: var(--primary); }
+
+        /* Page Header */
+        .page-header { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); padding: 60px 0; text-align: center; color: var(--white); }
+        .page-title { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; margin-bottom: 15px; }
+        .page-subtitle { font-size: 18px; opacity: 0.9; }
+
+        /* Section */
+        .section { padding: 60px 0; }
+        .section-header { text-align: center; margin-bottom: 40px; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: 36px; font-weight: 700; margin-bottom: 10px; }
+
+        /* Categories Tabs */
+        .categories-tabs { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-bottom: 40px; padding: 0 20px; }
+        .category-tab { padding: 10px 24px; background: var(--white); border: 2px solid var(--gray-200); border-radius: 30px; font-weight: 500; cursor: pointer; transition: all 0.3s; }
+        .category-tab:hover, .category-tab.active { background: var(--primary); color: var(--white); border-color: var(--primary); }
+
+        /* Products Grid */
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: var(--white); border-radius: 12px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 16px 32px rgba(0,0,0,0.12); }
+        .product-image { height: 220px; background: var(--gray-200); position: relative; overflow: hidden; }
+        .product-image img { width: 100%; height: 100%; object-fit: cover; }
+        .product-badge { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--primary); padding: 4px 12px; border-radius: 20px; font-size: 11px; font-weight: 600; text-transform: uppercase; }
+        .product-info { padding: 20px; }
+        .product-name { font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+        .product-desc { color: var(--text-light); font-size: 13px; margin-bottom: 12px; }
+        .product-price { font-size: 20px; font-weight: 700; color: var(--primary); }
+
+        /* Footer */
+        .site-footer { background: var(--primary-dark); color: var(--white); padding-top: 70px; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 50px; padding-bottom: 50px; }
+        .footer-logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; display: block; margin-bottom: 15px; }
+        .footer-desc { opacity: 0.85; line-height: 1.7; margin-bottom: 25px; }
+        .footer-social { display: flex; gap: 15px; }
+        .footer-social a { width: 42px; height: 42px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+        .footer-social a:hover { background: var(--gold); }
+        .footer-heading { font-size: 17px; font-weight: 600; margin-bottom: 22px; color: var(--gold); }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { opacity: 0.85; }
+        .footer-links a:hover { color: var(--gold); }
+        .footer-contact li { display: flex; gap: 12px; margin-bottom: 14px; opacity: 0.85; }
+        .footer-hours li { display: flex; justify-content: space-between; margin-bottom: 12px; opacity: 0.85; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .footer-bottom { background: rgba(0,0,0,0.2); padding: 20px 0; text-align: center; opacity: 0.8; font-size: 14px; }
+        .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; box-shadow: 0 4px 20px rgba(37,211,102,0.4); z-index: 999; }
+
+        @media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(3, 1fr); } .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 768px) { .products-grid { grid-template-columns: repeat(2, 1fr); } .footer-grid { grid-template-columns: 1fr; } .page-title { font-size: 36px; } }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-inner">
+                    <span>Premium Furniture & Pest Control — Nairobi, Kenya</span>
+                    <div class="header-contacts">
+                        <a href="tel:+254758289578" class="header-contact-link">+254 758 289 578</a>
+                        <a href="https://wa.me/254758289578" target="_blank" class="header-contact-link">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="header-main-inner">
+                    <a href="index.html" class="site-logo">
+                        <span class="site-title">Al Nuur <span class="title-accent">Complex</span></span>
+                        <span class="site-subtitle">Furnitures & Pest Control</span>
+                    </a>
+                    <nav class="main-nav">
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="furniture.html" style="color: var(--primary);">Furniture</a></li>
+                            <li><a href="appliances.html">Appliances</a></li>
+                            <li><a href="pest-control.html">Pest Control</a></li>
+                            <li><a href="booking.html" class="btn btn-primary">Book Now</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Premium Furniture</h1>
+                <p class="page-subtitle">Discover our wide collection of quality furniture for every room in your home</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="categories-tabs">
+                    <button class="category-tab active" data-category="all">All</button>
+                    <button class="category-tab" data-category="sofas">Sofas</button>
+                    <button class="category-tab" data-category="beds">Beds</button>
+                    <button class="category-tab" data-category="mattresses">Mattresses</button>
+                    <button class="category-tab" data-category="dining">Dining Sets</button>
+                    <button class="category-tab" data-category="wardrobes">Wardrobes</button>
+                    <button class="category-tab" data-category="office">Office</button>
+                    <button class="category-tab" data-category="outdoor">Outdoor</button>
+                    <button class="category-tab" data-category="decor">Home Decor</button>
+                </div>
+
+                <div class="products-grid" id="products-grid">
+                    <!-- Sofas -->
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><img src="IMAGES/Sofas 1.jpg" alt="Classic Velvet Sofa Set"></div>
+                        <div class="product-info"><h3 class="product-name">Classic Velvet Sofa Set</h3><p class="product-desc">Elegant 3-seater velvet sofa with plush cushioning.</p><div class="product-price">KSh 45,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Sofas 2.jpg" alt="Modern L-Shaped Sofa"></div>
+                        <div class="product-info"><h3 class="product-name">Modern L-Shaped Sofa</h3><p class="product-desc">Spacious L-shaped sofa perfect for family living rooms.</p><div class="product-price">KSh 68,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Sofas 3.jpg" alt="Luxury Leather Sofa"></div>
+                        <div class="product-info"><h3 class="product-name">Luxury Leather Sofa</h3><p class="product-desc">Genuine leather sofa with premium craftsmanship.</p><div class="product-price">KSh 85,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><img src="IMAGES/Sofas 4.jpg" alt="3-Seater Fabric Sofa"></div>
+                        <div class="product-info"><h3 class="product-name">3-Seater Fabric Sofa</h3><p class="product-desc">Comfortable fabric sofa in contemporary design.</p><div class="product-price">KSh 38,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><img src="IMAGES/Sofas 5.jpg" alt="Recliner Sofa Set"></div>
+                        <div class="product-info"><h3 class="product-name">Recliner Sofa Set</h3><p class="product-desc">Power recliner sofa set with built-in massage.</p><div class="product-price">KSh 72,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><img src="IMAGES/Sofas 6.jpg" alt="Compact 2-Seater Sofa"></div>
+                        <div class="product-info"><h3 class="product-name">Compact 2-Seater Sofa</h3><p class="product-desc">Space-saving 2-seater for apartments.</p><div class="product-price">KSh 32,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><img src="IMAGES/Sofas 7.jpg" alt="Sectional Sofa with Ottoman"></div>
+                        <div class="product-info"><h3 class="product-name">Sectional Sofa with Ottoman</h3><p class="product-desc">Large sectional with ottoman and storage.</p><div class="product-price">KSh 95,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="sofas">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Sofas.jpg" alt="Premium Chesterfield Sofa"></div>
+                        <div class="product-info"><h3 class="product-name">Premium Chesterfield Sofa</h3><p class="product-desc">Classic tufted chesterfield with rolled arms.</p><div class="product-price">KSh 120,000</div></div>
+                    </div>
+
+                    <!-- Beds -->
+                    <div class="product-card" data-category="beds">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Beds 1.jpg" alt="Classic Wooden Bed Frame"></div>
+                        <div class="product-info"><h3 class="product-name">Classic Wooden Bed Frame</h3><p class="product-desc">Solid wood bed frame with slatted base.</p><div class="product-price">KSh 28,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="beds">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Beds 2.jpg" alt="Upholstered King Size Bed"></div>
+                        <div class="product-info"><h3 class="product-name">Upholstered King Size Bed</h3><p class="product-desc">Luxury upholstered king bed with headboard.</p><div class="product-price">KSh 65,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="beds">
+                        <div class="product-image"><img src="IMAGES/Beds 3.jpg" alt="Modern Platform Bed"></div>
+                        <div class="product-info"><h3 class="product-name">Modern Platform Bed</h3><p class="product-desc">Low-profile platform bed with storage underneath.</p><div class="product-price">KSh 42,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="beds">
+                        <div class="product-image"><img src="IMAGES/Beds 4.jpg" alt="Bunk Bed with Storage"></div>
+                        <div class="product-info"><h3 class="product-name">Bunk Bed with Storage</h3><p class="product-desc">Space-saving bunk bed with built-in drawers.</p><div class="product-price">KSh 38,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="beds">
+                        <div class="product-image"><img src="IMAGES/Beds 5.jpg" alt="Queen Size Bed Frame"></div>
+                        <div class="product-info"><h3 class="product-name">Queen Size Bed Frame</h3><p class="product-desc">Elegant queen bed frame with wooden finish.</p><div class="product-price">KSh 35,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="beds">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Beds.jpg" alt="Luxury Sleigh Bed"></div>
+                        <div class="product-info"><h3 class="product-name">Luxury Sleigh Bed</h3><p class="product-desc">Grand sleigh bed with curved headboard.</p><div class="product-price">KSh 78,000</div></div>
+                    </div>
+
+                    <!-- Mattresses -->
+                    <div class="product-card" data-category="mattresses">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Orthobliss orthopedic mattress.jpg" alt="Orthopedic Memory Foam Mattress"></div>
+                        <div class="product-info"><h3 class="product-name">Orthopedic Memory Foam Mattress</h3><p class="product-desc">Pressure-relieving memory foam for spinal alignment.</p><div class="product-price">KSh 25,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="mattresses">
+                        <div class="product-image"><img src="IMAGES/Heavy Duty 10-Inch Mattress.jpg" alt="Heavy Duty 10-Inch Mattress"></div>
+                        <div class="product-info"><h3 class="product-name">Heavy Duty 10-Inch Mattress</h3><p class="product-desc">Extra thick mattress with reinforced support.</p><div class="product-price">KSh 32,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="mattresses">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/All Size Medical Mattress and Spring Mattress.jpg" alt="Premium Spring Mattress"></div>
+                        <div class="product-info"><h3 class="product-name">Premium Spring Mattress</h3><p class="product-desc">Bonnel spring mattress with quilted top.</p><div class="product-price">KSh 18,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="mattresses">
+                        <div class="product-image"><img src="IMAGES/morning glory mattress.jpg" alt="Morning Glory Mattress"></div>
+                        <div class="product-info"><h3 class="product-name">Morning Glory Mattress</h3><p class="product-desc">Medium-firm mattress with cooling gel layer.</p><div class="product-price">KSh 22,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="mattresses">
+                        <div class="product-image"><img src="IMAGES/Rose foam mattresses.jpg" alt="Rose Foam Mattress"></div>
+                        <div class="product-info"><h3 class="product-name">Rose Foam Mattress</h3><p class="product-desc">Budget-friendly foam mattress with 5-year warranty.</p><div class="product-price">KSh 15,000</div></div>
+                    </div>
+
+                    <!-- Dining -->
+                    <div class="product-card" data-category="dining">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Dining Sets 1.jpg" alt="6-Seater Dining Set"></div>
+                        <div class="product-info"><h3 class="product-name">6-Seater Dining Set</h3><p class="product-desc">Solid wood table with 6 upholstered chairs.</p><div class="product-price">KSh 55,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="dining">
+                        <div class="product-image"><img src="IMAGES/Dining Sets 2.jpg" alt="4-Seater Dining Set"></div>
+                        <div class="product-info"><h3 class="product-name">4-Seater Dining Set</h3><p class="product-desc">Compact dining set ideal for small families.</p><div class="product-price">KSh 38,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="dining">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Dining Sets 3.jpg" alt="Glass Top Dining Set"></div>
+                        <div class="product-info"><h3 class="product-name">Glass Top Dining Set</h3><p class="product-desc">Modern glass table with steel base and 6 chairs.</p><div class="product-price">KSh 48,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="dining">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Dining Sets5.jpg" alt="Extendable Dining Set"></div>
+                        <div class="product-info"><h3 class="product-name">Extendable Dining Set</h3><p class="product-desc">Extendable table seating 6-8 with leaf extension.</p><div class="product-price">KSh 65,000</div></div>
+                    </div>
+
+                    <!-- Wardrobes -->
+                    <div class="product-card" data-category="wardrobes">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Wardrobes 1.jpg" alt="6-Door Sliding Wardrobe"></div>
+                        <div class="product-info"><h3 class="product-name">6-Door Sliding Wardrobe</h3><p class="product-desc">Large sliding door wardrobe with premium finish.</p><div class="product-price">KSh 58,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="wardrobes">
+                        <div class="product-image"><img src="IMAGES/Wardrobes 2.jpg" alt="4-Door Wardrobe"></div>
+                        <div class="product-info"><h3 class="product-name">4-Door Wardrobe</h3><p class="product-desc">Spacious 4-door wardrobe with hanging and shelves.</p><div class="product-price">KSh 42,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="wardrobes">
+                        <div class="product-image"><img src="IMAGES/Wardrobes 3.jpg" alt="2-Door Wardrobe"></div>
+                        <div class="product-info"><h3 class="product-name">2-Door Wardrobe</h3><p class="product-desc">Compact 2-door wardrobe for smaller bedrooms.</p><div class="product-price">KSh 28,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="wardrobes">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Wardrobes 5.jpg" alt="Walk-in Closet System"></div>
+                        <div class="product-info"><h3 class="product-name">Walk-in Closet System</h3><p class="product-desc">Customizable walk-in closet with modular components.</p><div class="product-price">KSh 120,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="wardrobes">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Wardrobes 6.jpg" alt="Built-in Wardrobe Set"></div>
+                        <div class="product-info"><h3 class="product-name">Built-in Wardrobe Set</h3><p class="product-desc">Floor-to-ceiling built-in wardrobe with drawers.</p><div class="product-price">KSh 75,000</div></div>
+                    </div>
+
+                    <!-- Office -->
+                    <div class="product-card" data-category="office">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Office Furniture 1.jpg" alt="Executive Office Desk"></div>
+                        <div class="product-info"><h3 class="product-name">Executive Office Desk</h3><p class="product-desc">Large executive desk with return bridge.</p><div class="product-price">KSh 45,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="office">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Office Furniture.jpg" alt="Office Workstation"></div>
+                        <div class="product-info"><h3 class="product-name">Office Workstation</h3><p class="product-desc">Modern workstation with cable management.</p><div class="product-price">KSh 35,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="office">
+                        <div class="product-image"><img src="IMAGES/Office chair.jpg" alt="Ergonomic Office Chair"></div>
+                        <div class="product-info"><h3 class="product-name">Ergonomic Office Chair</h3><p class="product-desc">Adjustable office chair with mesh back.</p><div class="product-price">KSh 22,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="office">
+                        <div class="product-image"><img src="IMAGES/Leopard Gaming Chair.jpg" alt="Leopard Gaming Chair"></div>
+                        <div class="product-info"><h3 class="product-name">Leopard Gaming Chair</h3><p class="product-desc">Premium gaming chair with unique leopard print.</p><div class="product-price">KSh 32,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="office">
+                        <div class="product-image"><span class="product-badge">Featured</span><img src="IMAGES/Leopard Gaming Chair 1.jpg" alt="Leopard Gaming Chair Pro"></div>
+                        <div class="product-info"><h3 class="product-name">Leopard Gaming Chair Pro</h3><p class="product-desc">Leopard chair with footrest and massage.</p><div class="product-price">KSh 35,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="office">
+                        <div class="product-image"><img src="IMAGES/Homall High Back Leather Office Gaming Chair.jpg" alt="Homall High Back Gaming Chair"></div>
+                        <div class="product-info"><h3 class="product-name">Homall High Back Gaming Chair</h3><p class="product-desc">Ergonomic gaming chair with lumbar support.</p><div class="product-price">KSh 28,000</div></div>
+                    </div>
+
+                    <!-- Outdoor -->
+                    <div class="product-card" data-category="outdoor">
+                        <div class="product-image"><img src="IMAGES/Outdoor Furniture.jpg" alt="Outdoor Lounge Set"></div>
+                        <div class="product-info"><h3 class="product-name">Outdoor Lounge Set</h3><p class="product-desc">Weather-resistant lounge furniture set.</p><div class="product-price">KSh 85,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="outdoor">
+                        <div class="product-image"><img src="IMAGES/Outdoor Furniture 1.jpg" alt="Garden Dining Set"></div>
+                        <div class="product-info"><h3 class="product-name">Garden Dining Set</h3><p class="product-desc">6-seater outdoor dining set.</p><div class="product-price">KSh 55,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="outdoor">
+                        <div class="product-image"><img src="IMAGES/Outdoor Furniture 2.jpg" alt="Patio Umbrella Set"></div>
+                        <div class="product-info"><h3 class="product-name">Patio Umbrella Set</h3><p class="product-desc">Outdoor umbrella with base.</p><div class="product-price">KSh 25,000</div></div>
+                    </div>
+
+                    <!-- Home Decor -->
+                    <div class="product-card" data-category="decor">
+                        <div class="product-image"><img src="IMAGES/Home Decor 1.jpg" alt="Wall Mirror Set"></div>
+                        <div class="product-info"><h3 class="product-name">Wall Mirror Set</h3><p class="product-desc">Decorative mirrors for living room.</p><div class="product-price">KSh 12,000</div></div>
+                    </div>
+                    <div class="product-card" data-category="decor">
+                        <div class="product-image"><img src="IMAGES/Home Decor 2.jpg" alt="Table Lamp Collection"></div>
+                        <div class="product-info"><h3 class="product-name">Table Lamp Collection</h3><p class="product-desc">Modern table lamps set of 2.</p><div class="product-price">KSh 8,500</div></div>
+                    </div>
+                    <div class="product-card" data-category="decor">
+                        <div class="product-image"><img src="IMAGES/Home Decor 3.jpg" alt="Vase Set"></div>
+                        <div class="product-info"><h3 class="product-name">Decorative Vase Set</h3><p class="product-desc">Elegant vase collection.</p><div class="product-price">KSh 6,500</div></div>
+                    </div>
+                    <div class="product-card" data-category="decor">
+                        <div class="product-image"><img src="IMAGES/Home Decor 4.jpg" alt="Wall Art Set"></div>
+                        <div class="product-info"><h3 class="product-name">Wall Art Set</h3><p class="product-desc">Canvas prints for home decoration.</p><div class="product-price">KSh 15,000</div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <span class="footer-logo-text">Al Nuur <span class="title-accent">Complex</span></span>
+                    <p class="footer-desc">Your premier destination for premium furniture, home appliances, and professional pest control services in Kenya.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/254758289578" target="_blank">WhatsApp</a>
+                        <a href="tel:+254758289578">Call</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="furniture.html">Furniture</a></li>
+                        <li><a href="appliances.html">Appliances</a></li>
+                        <li><a href="pest-control.html">Pest Control</a></li>
+                        <li><a href="booking.html">Book Service</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li>Nairobi, Kenya</li>
+                        <li><a href="tel:+254758289578">+254 758 289 578</a></li>
+                        <li><a href="mailto:info@alnuurcomplex.co.ke">info@alnuurcomplex.co.ke</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-heading">Working Hours</h4>
+                    <ul class="footer-hours">
+                        <li><span>Mon - Fri:</span> 8:00 AM - 6:00 PM</li>
+                        <li><span>Saturday:</span> 8:00 AM - 4:00 PM</li>
+                        <li><span>Sunday:</span> 10:00 AM - 2:00 PM</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container"><p>© 2025 Al Nuur Complex. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/254758289578" target="_blank" class="whatsapp-float">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+    </a>
+
+    <script>
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.category-tab').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                const category = this.dataset.category;
+                document.querySelectorAll('.product-card').forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
